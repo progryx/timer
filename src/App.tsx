@@ -1,26 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { TimerComponent } from './components/TimerComponent';
+import { AppBar, Container, Toolbar, Typography } from '@material-ui/core';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+export const RootApp: React.FC = () => (
+    <React.Fragment>
+        <Container maxWidth="md">
+            <AppBar position="static">
+                <Toolbar>
+                    <Typography variant="h6">React Timer v2.0</Typography>
+                </Toolbar>
+            </AppBar>
+            <TimerComponent/>
+        </Container>
+    </React.Fragment>
+);
